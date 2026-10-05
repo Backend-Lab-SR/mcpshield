@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: mcpshield
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/mcpshield}
+    username: ${SPRING_DATASOURCE_USERNAME:mcpshield}
+    password: ${SPRING_DATASOURCE_PASSWORD:mcpshield}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
